@@ -1,0 +1,257 @@
+
+/*外层盒子大小*/
+
+.box {
+	width: 1110px;
+	height: 280px;
+	margin: 0px auto;
+	border: solid 0.3px #f5f5f5 !important;
+}
+/*盒子内部类为icon 的span 进行描述*/
+
+.link .icon,
+.link .icon1,
+.link .icon2 {
+	/*继承父元素宽度*/
+	width: 100%;
+	height: 190px;
+	/*span为行内元素*/
+	display: inline-block;
+	/*添加过度效果*/
+	/*如果使用过度,需要开始结束he开关都设定*/
+	transition: all 0.3s linear;
+	/*兼容代码*/
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+}
+
+/* 大方框里面的文字 */
+.box .link {
+	width: 320px;
+	height: 280px;
+	margin: 20px 22px;
+	float: left;
+	
+}
+
+.icon {
+	background: url(img/mission.png) no-repeat center center;
+}
+
+.icon1 {
+	background: url(img/play.png) no-repeat center center;
+}
+
+.icon2 {
+	background: url(img/touch.png) no-repeat center center;
+}
+
+.link .icon:hover,
+.link .icon1:hover,
+.link .icon2:hover {
+	transform: rotate(360deg) scale(1.2);
+	/*兼容IE浏览器*/
+	-ms-transform: rotate(360deg) scale(1.2);
+	/*兼容Safari和Chrome浏览器*/
+	-webkit-transform: rotate(360deg) scale(1.2);
+	/*兼容火狐浏览器*/
+	-moz-transform: rotate(360deg) scale(1.2);
+}
+/*设置幽灵按钮*/
+
+.button,
+.a {
+	display: block;
+	width: 180px;
+	height: 50px;
+	text-decoration: none;
+	line-height: 50px;
+	color: #7F7F7F;  /* 鼠标未划过时特效颜色 */
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bolder;
+	border: 1px solid #F5F5F5;
+	text-align: center;
+	margin: 0 auto;
+	box-sizing: border-box;
+	/*兼容代码*/
+	/*兼容IE浏览器*/
+	-ms-box-sizing: border-box;
+	/*兼容Safari和Chrome浏览器*/
+	-webkit-box-sizing: border-box;
+	/*兼容火狐浏览器*/
+	-moz-box-sizing: border-box;
+	/*加入箭头*/
+	background: url(img/allow.png)no-repeat 130px center;
+	/*添加过度效果*/
+	transition: all 0.3s linear;
+	position: relative;
+}
+
+.button:hover {
+	border: 2px solid rgba(255, 255, 255, 1);
+	background-position: 140px center;
+}
+/*添加四条线的样式*/
+
+.button:hover .line {
+	background: black;
+}
+/*是四条闪现过来的线 ，很多重复的部分*/
+
+.button .line {
+	display: block;
+	position: absolute;
+	background: none;
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+}
+/*顶端的线标注*/
+/*1.高度 不变
+2.盒子宽度不变
+3.位置左右位置移动*/
+
+.button .line_top {
+	height: 2px;
+	width: 0;
+	left: -110%;
+	top: -2px;
+}
+
+.button:hover .line_top {
+	width: 100%;
+	left: -2px;
+}
+
+.button .line_bottom {
+	height: 2px;
+	width: 0;
+	right: -110%;
+	bottom: -2px;
+}
+
+.button:hover .line_bottom {
+	width: 100%;
+	right: -2px;
+}
+
+.button .line_right {
+	height: 0px;
+	width: 2px;
+	right: -2px;
+	top: -110%;
+}
+
+.button:hover .line_right {
+	height: 100%;
+	top: -2px;
+}
+
+.button .line_left {
+	height: 0px;
+	width: 2px;
+	left: -2px;
+	bottom: -110%;
+}
+
+.button:hover .line_left {
+	height: 100%;
+	bottom: -2px;
+}
+.a{
+	
+	  overflow: hidden;
+}
+.a:hover {
+	background: #f5f5f5 !important; /* 方框里面的颜色 */
+	color: #3b3935;  /* 鼠标滑过时候的颜色 */
+	border-radius: 5px;
+	box-shadow: 0 0 5px #686861, 0 0 25px #686861, 0 0 50px #686861, 0 0 100px #686861;
+	background-position: 20px center;
+}
+
+.a span {
+	position: absolute;
+	display: block
+}
+
+.a span:nth-child(1) {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #dfe1e1);/* 闪动的方框的上面的颜色 */
+	animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+	0% {
+		left: -100%;
+	}
+	50%,
+	100% {
+		left: 100%;
+	}
+}
+
+.a span:nth-child(2) {
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #dfe1e1);/* 闪动的方框的右边的颜色 */
+	animation: btn-anim2 1s linear infinite;
+	animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+	0% {
+		top: -100%;
+	}
+	50%,
+	100% {
+		top: 100%;
+	}
+}
+
+.a span:nth-child(3) {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #6b7474);  /* 闪动的方框的下面的颜色 */
+	animation: btn-anim3 1s linear infinite;
+	animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+	0% {
+		right: -100%;
+	}
+	50%,
+	100% {
+		right: 100%;
+	}
+}
+
+.a span:nth-child(4) {
+	bottom: -100%;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #03e9f4);
+	animation: btn-anim4 1s linear infinite;
+	animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+	0% {
+		bottom: -100%;
+	}
+	50%,
+	100% {
+		bottom: 100%;
+	}
+}

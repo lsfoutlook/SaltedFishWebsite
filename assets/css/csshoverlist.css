@@ -1,0 +1,92 @@
+#app {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+	height:380px;
+	
+}
+
+.box {
+    width: 280px;
+    overflow: hidden;
+    background: #f6f6f6;
+    box-sizing: border-box;
+    padding: 0 15px 25px 15px;
+	height:380px;
+}
+
+.box a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #7F7F7F;
+    text-decoration: none;
+}
+
+.box a:hover {
+    color: black;
+}
+
+.imgBox {
+    width: 280px;
+    height: 186.67px;
+    overflow: hidden;
+	background: #FFFFFF;
+}
+
+.imgBox img {
+    width: 128px;
+    height: 128px;
+    transition: all 0.6s linear; 
+	background: #FFFFFF;
+	margin: 30px 70px;
+	border: 0;
+	
+}
+
+.source {
+    border: 1px solid #535353;
+    padding: 6px 20px;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.detail {
+    font-size: 14px;
+    line-height: 160%;
+    text-align: justify;
+    width: 100%;
+}
+
+/*鼠标hover效果*/
+
+.box>a::after {
+    content: '';
+    width: 280px;
+    position: absolute;
+    background: #CACACA;   /* 下方颜色 */
+    bottom: 0;
+    height: 0px;
+    transition: height 0.3s linear;
+    /*利用伪类高度，实现动画效果*/
+}
+
+.box>a:hover::after {
+    height: 10px;
+}
+
+.box:hover img {
+    transform: scale(1.15);
+}
+
+.box:hover .source {
+    background: #CACACA;
+    border-color: #CACACA;
+    color: #ffffff;
+}
