@@ -67,7 +67,7 @@ a:hover {
 }
 
 .tright {
-    text-align: right;
+    text-align: center;
 }
 
 img {
@@ -93,13 +93,44 @@ section p {
     width: 100%;
 }
 .topmargin-xs { margin-top: 15px; }
-.topmargin-sm { margin-top: 30px; }
+.topmargin-sm { margin-top: 30px; color: black;}
 .topmargin-lg { 
 	margin-top: 60px; 
 }
 
 .divider-right {
     border-right: 1px solid rgba(0,0,0,.1);
+}
+
+/* 字体后缀和浏览器有关，如下所示
+* .TTF或.OTF，适用于Firefox 3.5、Safari、Opera 
+* .EOT，适用于Internet Explorer 4.0+ 
+* .SVG，适用于Chrome、IPhone 
+ */
+@font-face {
+font-family: mFontCute;
+src: url('../assets/font/FZSJ-KEKAASYBA.TTF') format('truetype'); 
+
+}
+
+@font-face {
+    font-family: 'fzsj-kekaasybaregular';
+    src: url('fzsj-kekaasyba-webfont.eot');
+    src: url('fzsj-kekaasyba-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fzsj-kekaasyba-webfont.woff2') format('woff2'),
+         url('fzsj-kekaasyba-webfont.woff') format('woff'),
+         url('fzsj-kekaasyba-webfont.ttf') format('truetype'),
+         url('fzsj-kekaasyba-webfont.svg#fzsj-kekaasybaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.members-text{
+	margin-top: 15px; 
+	color: #4B4B4B;
+	font-size: 16px;
+	font-family:"fzsj-kekaasybaregular";
+	
 }
 
 /*////////////////////////////
@@ -141,8 +172,8 @@ section p {
 }
 
 .logo {
-    min-width: 200px;
-    max-width: 200px;
+    min-width: 40px;
+    max-width: 40px;
     box-shadow: none;
 }
 
