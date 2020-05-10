@@ -1,3 +1,5 @@
 # SaltedFishWebsite
 咸鱼网络官网
-点击http://vpn.fishs.club/可进行预览
+http://vpn.fishs.club/
+
+欢迎访问
